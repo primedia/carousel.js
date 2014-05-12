@@ -1,7 +1,7 @@
 {
   "name": "carousel.js",
   "version": "1.0.0",
-  "dependencies": {
+  "devDependencies": {
     "coffee-script": "~1.6.0",
     "bower": "~1.2.8",
     "bower-requirejs": "~0.8.6"
