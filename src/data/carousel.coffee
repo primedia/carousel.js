@@ -1,7 +1,7 @@
 define [
   'jquery',
   'flight/lib/component',
-  'shared/listing'
+  './listing'
 ], (
   $,
   defineComponent,
@@ -9,7 +9,6 @@ define [
 ) ->
 
   carousel = ->
-
     @selector = (listingId) ->
       "[data-listingid=#{listingId}][data-photos]"
 
