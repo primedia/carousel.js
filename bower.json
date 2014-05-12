@@ -1,0 +1,17 @@
+{
+  "name": "carousel.js",
+  "version": "1.0.0",
+  "main": "carousel.js",
+  "dependencies": {
+    "flight"                    : ">=1.0.4 < 1.1.0",
+    "image-helper"              : "git@github.com:primedia/image-helper.js.git#v0.0.1",
+    "jquery"                    : "1.8.3",
+    "jquery-smoothdivscroll"    : "git@github.com:primedia/jquery-smoothdivscroll#v0.0.3",
+    "jquery-ui"                 : "git@github.com:primedia/jquery-ui.git#1.8.22"
+  },
+  "ignore": [
+    "src/",
+    "package.json",
+    "README.md"
+  ]
+}
