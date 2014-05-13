@@ -1,5 +1,5 @@
 {
-  "name": "carousel.js",
+  "name": "carousel",
   "version": "1.0.0",
   "main": "carousel.js",
   "dependencies": {
