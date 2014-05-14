@@ -16,6 +16,8 @@ define [
     @defaultAttrs
       scrollableSelector: '#makeMeScrollable'
       propertyThumbSelector: "#property_thumb_non_carousel"
+      carouselPhotoSelector: "#makeMeScrollable .carouselPhoto"
+      clickablePhotos: false
 
     @hide = ->
       @$node.hide()
@@ -36,6 +38,7 @@ define [
       path = imageHelper.url(photo.path, null, 250)
       img = new Image()
       @carousel.push(img)
+      img.alt = photo.title
       img.onerror = @onImageError
       img.onload = @onImageLoaded.bind(@)
       img.src = path
@@ -62,12 +65,21 @@ define [
 
       scrollable.smoothDivScroll("recalculateScrollableArea")
       scrollable.smoothDivScroll("startAutoScrolling")
+      if @attr.clickablePhotos
+        @on @attr.carouselPhotoSelector, 'click', @showImage
 
     @pauseCarousel = ->
       @select('scrollableSelector').smoothDivScroll("stopAutoScrolling")
 
     @resumeCarousel = ->
       @select('scrollableSelector').smoothDivScroll("startAutoScrolling")
+
+    @showImage = ->
+      img = event.target
+      image =
+        path: img.src
+        title: img.alt
+      @trigger 'uiCarouselShowImage', image
 
     @render = (ev, listing) ->
       _photos = listing.photos()

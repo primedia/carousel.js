@@ -7,7 +7,9 @@
       _photos = void 0;
       this.defaultAttrs({
         scrollableSelector: '#makeMeScrollable',
-        propertyThumbSelector: "#property_thumb_non_carousel"
+        propertyThumbSelector: "#property_thumb_non_carousel",
+        carouselPhotoSelector: "#makeMeScrollable .carouselPhoto",
+        clickablePhotos: false
       });
       this.hide = function() {
         this.$node.hide();
@@ -34,6 +36,7 @@
         path = imageHelper.url(photo.path, null, 250);
         img = new Image();
         this.carousel.push(img);
+        img.alt = photo.title;
         img.onerror = this.onImageError;
         img.onload = this.onImageLoaded.bind(this);
         img.src = path;
@@ -64,13 +67,25 @@
           autoScrollingInterval: 15
         });
         scrollable.smoothDivScroll("recalculateScrollableArea");
-        return scrollable.smoothDivScroll("startAutoScrolling");
+        scrollable.smoothDivScroll("startAutoScrolling");
+        if (this.attr.clickablePhotos) {
+          return this.on(this.attr.carouselPhotoSelector, 'click', this.showImage);
+        }
       };
       this.pauseCarousel = function() {
         return this.select('scrollableSelector').smoothDivScroll("stopAutoScrolling");
       };
       this.resumeCarousel = function() {
         return this.select('scrollableSelector').smoothDivScroll("startAutoScrolling");
+      };
+      this.showImage = function() {
+        var image, img;
+        img = event.target;
+        image = {
+          path: img.src,
+          title: img.alt
+        };
+        return this.trigger('uiCarouselShowImage', image);
       };
       this.render = function(ev, listing) {
         _photos = listing.photos();
