@@ -78,9 +78,9 @@
       this.resumeCarousel = function() {
         return this.select('scrollableSelector').smoothDivScroll("startAutoScrolling");
       };
-      this.showImage = function() {
+      this.showImage = function(ev) {
         var image, img;
-        img = event.target;
+        img = ev.target;
         image = {
           path: img.src,
           title: img.alt

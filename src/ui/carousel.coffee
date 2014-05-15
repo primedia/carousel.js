@@ -74,8 +74,8 @@ define [
     @resumeCarousel = ->
       @select('scrollableSelector').smoothDivScroll("startAutoScrolling")
 
-    @showImage = ->
-      img = event.target
+    @showImage = (ev) ->
+      img = ev.target
       image =
         path: img.src
         title: img.alt
