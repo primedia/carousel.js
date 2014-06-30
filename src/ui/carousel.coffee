@@ -59,8 +59,8 @@ define [
       scrollable.smoothDivScroll({
         autoScrollingMode: "always",
         autoScrollingDirection: "endlessloopright",
-        autoScrollingStep: 1,
-        autoScrollingInterval: 15
+        autoScrollingStep: 3,
+        autoScrollingInterval: 20
       })
 
       scrollable.smoothDivScroll("recalculateScrollableArea")
