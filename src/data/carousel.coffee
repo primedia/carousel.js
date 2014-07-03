@@ -20,4 +20,4 @@ define [
     @after 'initialize', ->
       @on 'uiCarouselRequested', @serveCarouselRequested
 
-  defineComponent carousel
+  defineComponent: -> defineComponent(carousel)

@@ -1,6 +1,6 @@
 {
   "name": "carousel",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "main": "carousel.js",
   "dependencies": {
     "flight"                    : ">=1.0.4 < 1.1.0",
