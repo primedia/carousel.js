@@ -16,7 +16,11 @@
         return this.on('uiCarouselRequested', this.serveCarouselRequested);
       });
     };
-    return defineComponent(carousel);
+    return {
+      defineComponent: function() {
+        return defineComponent(carousel);
+      }
+    };
   });
 
 }).call(this);
