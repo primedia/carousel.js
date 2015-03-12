@@ -43,7 +43,10 @@
         return $(img).addClass('carouselPhoto');
       };
       this.onImageError = function() {
-        return this.src = imageHelper.notFoundURL();
+        this.src = imageHelper.notFoundURL();
+        if (imageHelper.notFoundImageWidth()) {
+          return this.width = imageHelper.notFoundImageWidth();
+        }
       };
       this.onImageLoaded = function() {
         this.pendingImages -= 1;
