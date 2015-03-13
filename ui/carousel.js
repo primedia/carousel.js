@@ -43,9 +43,10 @@
         return $(img).addClass('carouselPhoto');
       };
       this.onImageError = function() {
+        var w;
         this.src = imageHelper.notFoundURL();
-        if (imageHelper.notFoundImageWidth()) {
-          return this.width = imageHelper.notFoundImageWidth();
+        if (w = imageHelper.notFoundImageWidth()) {
+          return this.width = w;
         }
       };
       this.onImageLoaded = function() {

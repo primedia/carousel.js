@@ -46,7 +46,8 @@ define [
 
     @onImageError = ->
       @src = imageHelper.notFoundURL()
-      @width = imageHelper.notFoundImageWidth() if imageHelper.notFoundImageWidth()
+      if w = imageHelper.notFoundImageWidth()
+        @width = w
 
     @onImageLoaded = ->
       @pendingImages -= 1
