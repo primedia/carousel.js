@@ -67,6 +67,7 @@ define [
 
       scrollable.smoothDivScroll("recalculateScrollableArea")
       scrollable.smoothDivScroll("startAutoScrolling")
+      $(document).trigger('uiTagImagesLoaded')
       if @attr.clickablePhotos
         @on @attr.carouselPhotoSelector, 'click', @showImage
 
