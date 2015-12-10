@@ -72,7 +72,6 @@
         });
         scrollable.smoothDivScroll("recalculateScrollableArea");
         scrollable.smoothDivScroll("startAutoScrolling");
-        $(document).trigger('uiTagCarouselImages');
         if (this.attr.clickablePhotos) {
           return this.on(this.attr.carouselPhotoSelector, 'click', this.showImage);
         }
