@@ -40,6 +40,7 @@
         img.onerror = this.onImageError;
         img.onload = this.onImageLoaded.bind(this);
         img.src = path;
+        $(img).attr("itemprop", "contentURL");
         return $(img).addClass('carouselPhoto');
       };
       this.onImageError = function() {

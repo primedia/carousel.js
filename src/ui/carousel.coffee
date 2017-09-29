@@ -42,6 +42,7 @@ define [
       img.onerror = @onImageError
       img.onload = @onImageLoaded.bind(@)
       img.src = path
+      $(img).attr("itemprop", "contentURL")
       $(img).addClass('carouselPhoto')
 
     @onImageError = ->
